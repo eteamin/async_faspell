@@ -1,0 +1,8 @@
+MANIFEST.in
+setup.cfg
+faspell/__init__.py
+faspell/spell_checker.py
+faspell.egg-info/PKG-INFO
+faspell.egg-info/SOURCES.txt
+faspell.egg-info/dependency_links.txt
+faspell.egg-info/top_level.txt
