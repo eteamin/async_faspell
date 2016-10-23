@@ -1,0 +1,4 @@
+#author: Amin Etesamian
+#date: 26/12/1394 - 22:46 pm
+
+Simple spell checker in python for Farsi
