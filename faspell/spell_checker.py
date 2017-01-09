@@ -64,22 +64,3 @@ class SpellChecker(object):
                await self.assert_known(await self.transpose()) or \
                await self.assert_known(await self.replace()) or \
                await self.assert_known(await self.insert())
-
-
-if __name__ == '__main__':
-
-    def words(database):
-        return re.split('\n', database)
-
-    def train(features):
-        model = dict.fromkeys(features, 1)
-        return model
-
-    start_time = time.time()
-    async def do():
-        with open('big.txt', 'r') as my_dictionary:
-            check_spelling = SpellChecker(train(words(my_dictionary.read())), 'شلام')
-            print(await check_spelling.correct())
-        print(time.time() - start_time)
-    loop = asyncio.get_event_loop()
-    loop.run_until_complete(do())
