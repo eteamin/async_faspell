@@ -12,43 +12,43 @@ class SpellChecker(object):
 
     def __init__(self, database, word):
         self.all_words = database
-        self.word = word
-        self.alphabet = ['آ', 'ا', 'ب', 'پ', 'ت', 'ث', 'ج', 'چ', 'ح', 'خ', 'د', 'ذ', 'ر', 'ز', 'ژ', 'س', 'ش', 'ص',
-                         'ض', 'ط', 'ظ', 'ع', 'غ', 'ف', 'ق', 'ک', 'گ', 'ل', 'م', 'ن', 'و', 'ه', 'ی']
+        self.word = word.lower()
+        self.alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
+                         'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
     async def delete(self):
         deletes = []
-        async for a, b in AsyncListOfTupleIteration(self.split):
+        async for a, b in AsyncListOfTupleIteration(await self.split()):
             if b:
-                await deletes.append(a + await b[1:])
+                deletes.append(a + b[1:])
         return deletes
 
     async def transpose(self):
         transposes = []
-        async for a, b in AsyncListOfTupleIteration(self.split):
+        async for a, b in AsyncListOfTupleIteration(await self.split()):
             if len(b) > 1:
-                await transposes.append(a + await b[1] + await b[0] + await b[2:])
+                transposes.append(a + b[1] + b[0] + b[2:])
         return transposes
 
     async def replace(self):
         replaces = []
-        async for a, b in AsyncListOfTupleIteration(self.split):
+        async for a, b in AsyncListOfTupleIteration(await self.split()):
             async for c in AsyncListIteration(self.alphabet):
                 if b:
-                    await replaces.append(a + c + b[1:])
+                    replaces.append(a + c + b[1:])
         return replaces
 
     async def insert(self):
         inserts = []
-        async for a, b in AsyncListOfTupleIteration(self.split()):
+        async for a, b in AsyncListOfTupleIteration(await self.split()):
             async for c in AsyncListOfTupleIteration(self.alphabet):
-                await inserts.append(a + c + b)
+                inserts.append(a + c + b)
         return inserts
 
     async def split(self):
         splits = []
         async for i in AsyncRange(len(self.word) + 1):
-            await splits.append((await self.word[:i], await self.word[i:]))
+            splits.append((self.word[:i], self.word[i:]))
         return splits
 
     async def assert_known(self, words):

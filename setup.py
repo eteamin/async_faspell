@@ -18,7 +18,9 @@ packages = [
     'faspell'
 ]
 
-requires = []
+requires = [
+    'aiohttp'
+]
 
 test_requirements = []
 setup(
