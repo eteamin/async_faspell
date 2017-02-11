@@ -5,7 +5,7 @@ import asyncio
 import collections
 import time
 
-from helpers import AsyncRange, AsyncListOfTupleIteration
+from helpers import AsyncRange, AsyncListOfTupleIteration, AsyncListIteration
 
 
 class SpellChecker(object):
