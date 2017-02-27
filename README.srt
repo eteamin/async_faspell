@@ -2,3 +2,5 @@
 #date: 26/12/1394 - 22:46 pm
 
 Simple spell checker in python for Farsi
+
+Simply instansiate the SpellChecker class, providing the textbased, new-line splitted database and the word, then invoke correct()
