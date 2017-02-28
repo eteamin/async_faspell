@@ -16,6 +16,7 @@ except ImportError:
 
 packages = [
     'async_faspell',
+    'helpers'
 ]
 
 requires = [
