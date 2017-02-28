@@ -15,10 +15,13 @@ except ImportError:
     from setuptools import setup, find_packages
 
 packages = [
-    'faspell'
+    'async_faspell',
 ]
 
-requires = []
+requires = [
+    'gunicorn',
+    'aiohttp'
+]
 
 test_requirements = []
 setup(
