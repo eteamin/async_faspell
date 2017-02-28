@@ -19,8 +19,6 @@ packages = [
 ]
 
 requires = [
-    'gunicorn',
-    'aiohttp'
 ]
 
 test_requirements = []
