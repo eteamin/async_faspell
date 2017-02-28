@@ -1,6 +1,24 @@
-#author: Amin Etesamian
-#date: 26/12/1394 - 22:46 pm
+sqlalchemy-media
+================
 
-Simple spell checker in python for Farsi
+Documentation
+-------------
+faspell is an async library for providing suggestion for Persian spellchecking.
 
-Simply instansiate the SpellChecker class, providing the textbased, new-line splitted database and the word, then invoke correct()
+Usage
+-----------
+
+Here is a simple example to see how to use this library:
+
+.. code-block:: python
+
+  from faspell.spell_checker import SpellChecker
+  # Hint: database is supposed to be a text file containing persian words separated by \n. e.g. سلام\nسیب\nدرخت
+  sp = SpellChecker(database=path_to_db)
+  sp.correct(word='متغاضی')
+
+Produces::
+    ['متقاضی']
+
+
+
