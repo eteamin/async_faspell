@@ -17,7 +17,8 @@ Here is a simple example to see how to use this library:
   sp = SpellChecker(database=path_to_db)
   sp.correct(word='متغاضی')
 
-Produces::
+Produces
+-----------
     ['متقاضی']
 
 
