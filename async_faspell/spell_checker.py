@@ -3,7 +3,7 @@
 import asyncio
 
 
-from .helpers import AsyncRange, AsyncListOfTupleIteration, AsyncListIteration
+from async_faspell.helpers import AsyncRange, AsyncListOfTupleIteration, AsyncListIteration
 
 
 class SpellChecker(object):
