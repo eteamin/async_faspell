@@ -51,7 +51,7 @@ class AsyncListIteration(object):
             self.i += 1
             return item
         except IndexError:
-raise StopAsyncIteration
+            raise StopAsyncIteration
 
 
 class SpellChecker(object):
