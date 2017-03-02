@@ -1,9 +1,6 @@
 async-faspell
 ================
 
-.. image:: https://travis-ci.org/eteamin/async_faspell.svg?branch=master
-     :target: https://travis-ci.org/eteamin/async_faspell
-
 Documentation
 -------------
 faspell is an async library for providing suggestion for Persian spellchecking.
