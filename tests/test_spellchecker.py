@@ -4,7 +4,7 @@ from async_faspell.spell_checker import SpellChecker
 
 
 async def test_spell_checker():
-    with open('db', 'r') as db:
+    async with open('db', 'r') as db:
         sp = SpellChecker(db.read())
         await sp.correct('متغاضی') == ['متقاضی']
 
