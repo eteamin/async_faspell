@@ -1,6 +1,6 @@
 import asyncio
 
-from async_faspell.spell_checker import SpellChecker
+from async_faspell.main import SpellChecker
 
 
 async def test_spell_checker():
