@@ -59,24 +59,25 @@ class SpellChecker(object):
         self.all_words = database
         self.alphabet = ['آ', 'ا', 'ب', 'پ', 'ت', 'ث', 'ج', 'چ', 'ح', 'خ', 'د', 'ذ', 'ر', 'ز', 'ژ', 'س', 'ش', 'ص',
                          'ض', 'ط', 'ظ', 'ع', 'غ', 'ف', 'ق', 'ک', 'گ', 'ل', 'م', 'ن', 'و', 'ه', 'ی']
+        self.splits = None
 
     async def delete(self):
         deletes = []
-        async for a, b in AsyncListOfTupleIteration(await self.split()):
+        async for a, b in AsyncListOfTupleIteration(self.splits):
             if b:
                 deletes.append(a + b[1:])
         return deletes
 
     async def transpose(self):
         transposes = []
-        async for a, b in AsyncListOfTupleIteration(await self.split()):
+        async for a, b in AsyncListOfTupleIteration(self.splits):
             if len(b) > 1:
                 transposes.append(a + b[1] + b[0] + b[2:])
         return transposes
 
     async def replace(self):
         replaces = []
-        async for a, b in AsyncListOfTupleIteration(await self.split()):
+        async for a, b in AsyncListOfTupleIteration(self.splits):
             async for c in AsyncListIteration(self.alphabet):
                 if b:
                     replaces.append(a + c + b[1:])
@@ -84,7 +85,7 @@ class SpellChecker(object):
 
     async def insert(self):
         inserts = []
-        async for a, b in AsyncListOfTupleIteration(await self.split()):
+        async for a, b in AsyncListOfTupleIteration(self.splits):
             async for c in AsyncListOfTupleIteration(self.alphabet):
                 inserts.append(a + c + b)
         return inserts
@@ -104,6 +105,7 @@ class SpellChecker(object):
 
     async def correct(self, word):
         self.word = word
+        self.splits = await self.split()
         return await self.assert_known([self.word]) or \
             await self.assert_known(await self.delete()) or \
             await self.assert_known(await self.transpose()) or \

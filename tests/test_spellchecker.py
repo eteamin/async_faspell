@@ -6,7 +6,7 @@ from async_faspell.main import SpellChecker
 async def test_spell_checker():
     with open('db', 'r') as db:
         sp = SpellChecker(db.read())
-        await sp.correct('متغاضی') == ['متقاضی']
+        assert await sp.correct('متغاضی') == ['متقاضی']
 
 
 if __name__ == '__main__':
