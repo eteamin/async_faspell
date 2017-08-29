@@ -21,7 +21,9 @@ packages = [
 requires = [
 ]
 
-test_requirements = []
+test_requirements = [
+    'aiofiles'
+]
 setup(
     name='async_faspell',
     version='0.1.0',

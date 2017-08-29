@@ -1,11 +1,12 @@
 import asyncio
+import aiofiles
 
 from async_faspell.main import SpellChecker
 
 
 async def test_spell_checker():
-    with open('db', 'r') as db:
-        sp = SpellChecker(db.read())
+    async with aiofiles.open('db', 'r') as db:
+        sp = SpellChecker(await db.read())
         assert await sp.correct('متغاضی') == ['متقاضی']
 
 
