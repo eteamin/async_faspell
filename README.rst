@@ -29,22 +29,3 @@ Here is a simple example to see how to use this library:
 Produces
 -----------
     ['متقاضی']
-
-Benchmark
-------------
-Hosted using aiohttp and gunicorn
-the following benchmark 'ab -c 1000 -n 1000 url' results in!:
-
-.. code-block:: bash
-
-  Percentage of the requests served within a certain time (ms)
-  
-    50%     49
-    66%     51
-    75%     53
-    80%     54
-    90%     60
-    95%     64
-    98%     69
-    99%     75
-
