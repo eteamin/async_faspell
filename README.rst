@@ -5,8 +5,7 @@ async-faspell
 
 Documentation
 -------------
-faspell is an async library for providing suggestion for Persian spellchecking. sync version = https://github.com/eteamin/faspell
-
+faspell is an async library for providing suggestion for Persian spellchecking.
 Usage
 -----------
 Here is a simple example to see how to use this library:
