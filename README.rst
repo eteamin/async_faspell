@@ -1,5 +1,6 @@
 async-faspell
 ================
+[![Build Status](https://travis-ci.org/eteamin/async_faspell.svg?branch=master)](https://travis-ci.org/eteamin/async_faspell)
 
 Documentation
 -------------
