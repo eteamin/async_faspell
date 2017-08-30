@@ -6,9 +6,6 @@ try:
 except:
     pass
 
-import sys
-py_version = sys.version_info[:2]
-
 try:
     from setuptools import setup, find_packages
 except ImportError:
@@ -19,11 +16,10 @@ packages = [
 ]
 
 requires = [
-]
-
-test_requirements = [
     'aiofiles'
 ]
+
+test_requirements = []
 setup(
     name='async_faspell',
     version='0.1.0',
