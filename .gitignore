@@ -94,6 +94,3 @@ ENV/
 
 # Pycharm
 .idea/
-
-# Test stuff
-tests/db
